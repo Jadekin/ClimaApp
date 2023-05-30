@@ -19,10 +19,25 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+build/
+ios/.xcode.env.local
 
 # Android Studio
-# Add Android Studio related.
+build/
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+.cxx/
+*.keystore
+!debug.keystore
 
 # React 
 node_modules/
 npm-debug.log
+yarn-error.log
+
+# Ruby / CocoaPods
+/ios/Pods/
+/vendor/bundle/
