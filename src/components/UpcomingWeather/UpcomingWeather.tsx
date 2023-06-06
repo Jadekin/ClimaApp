@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   FlatList,
-  Image,
+  ImageBackground,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -174,14 +174,18 @@ function UpcomingWeather() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Upcoming weather</Text>
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.dt_txt}
-        ItemSeparatorComponent={() => (
-          <View style={styles.separator} />
-        )}></FlatList>
+      <ImageBackground
+        source={require('../../../assets/cloudbackground.jpg')}
+        style={styles.image}>
+        <Text>Upcoming weather</Text>
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.dt_txt}
+          ItemSeparatorComponent={() => (
+            <View style={styles.separator} />
+          )}></FlatList>
+      </ImageBackground>
     </SafeAreaView>
   );
 }
@@ -189,9 +193,9 @@ function UpcomingWeather() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 10,
     marginTop: StatusBar.currentHeight || 0,
   },
+  image: { flex: 1 },
   item: {
     margin: 10,
     padding: 20,
@@ -199,9 +203,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     borderWidth: 2,
+    backgroundColor: 'white',
   },
   separator: {
-    backgroundColor: 'gray',
+    backgroundColor: 'pink',
     height: 10,
   },
 });
