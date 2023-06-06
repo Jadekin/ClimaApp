@@ -9,6 +9,8 @@ import {
   View,
 } from 'react-native';
 
+import WeatherListItem from '../../components/WeatherListItem/WeatherListItem';
+
 function UpcomingWeather() {
   const data = [
     {
@@ -130,26 +132,6 @@ function UpcomingWeather() {
     },
   ];
 
-  interface ItemProps {
-    dt_txt: string;
-    min: number;
-    max: number;
-    condition: string;
-  }
-
-  const Item = (props: ItemProps) => {
-    const { dt_txt, min, max, condition } = props;
-
-    return (
-      <View style={styles.item}>
-        <Text>{dt_txt}</Text>
-        <Text>{min}</Text>
-        <Text>{max}</Text>
-        <Text>{condition}</Text>
-      </View>
-    );
-  };
-
   interface WeatherItem {
     weather: { main: string }[];
     dt_txt: string;
@@ -162,7 +144,7 @@ function UpcomingWeather() {
   const renderItem = ({ item }: { item: WeatherItem }) => {
     return (
       <>
-        <Item
+        <WeatherListItem
           condition={item.weather[0].main}
           dt_txt={item.dt_txt}
           min={item.main.temp_min}
@@ -196,18 +178,10 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   image: { flex: 1 },
-  item: {
-    margin: 10,
-    padding: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    borderWidth: 2,
-    backgroundColor: 'white',
-  },
   separator: {
     backgroundColor: 'pink',
     height: 10,
   },
 });
+
 export default UpcomingWeather;
