@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   SafeAreaView,
   Text,
@@ -6,10 +7,21 @@ import {
   ImageBackground,
   StatusBar,
   View,
+  Image,
 } from 'react-native';
+import IconText from '../../components/IconText/IconText';
 
 const City = () => {
-  const { container, imageLayout, cityName, countryName, titles, sun } = styles;
+  const {
+    container,
+    imageLayout,
+    cityName,
+    countryName,
+    titles,
+    sunRiseSet,
+    icon,
+    population,
+  } = styles;
 
   return (
     <SafeAreaView style={container}>
@@ -18,13 +30,18 @@ const City = () => {
         style={imageLayout}>
         <Text style={[cityName, titles]}>Lima</Text>
         <Text style={[countryName, titles]}>Peru</Text>
-        <View>
-          <Text style={titles}>Population: 12MM</Text>
-        </View>
-        <View style={sun}>
-          <Text style={titles}>Sunrise time: 6am</Text>
-          <Text style={titles}>Sunset: 6pm</Text>
-        </View>
+        <IconText
+          title="12MM"
+          iconName="group"
+        />
+        <IconText
+          title="6am"
+          iconName="sunrise"
+        />
+        <IconText
+          title="6pm"
+          iconName="sunset"
+        />
       </ImageBackground>
     </SafeAreaView>
   );
@@ -50,10 +67,18 @@ const styles = StyleSheet.create({
   countryName: {
     fontSize: 20,
   },
-  sun: {
+  population: {
     flexDirection: 'row',
-    gap: 40,
     justifyContent: 'center',
+  },
+  sunRiseSet: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  icon: {
+    width: 30,
+    height: 30,
+    tintColor: 'white',
   },
 });
 
