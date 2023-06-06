@@ -10,9 +10,10 @@ interface ItemProps {
 
 const WeatherListItem = (props: ItemProps) => {
   const { dt_txt, min, max, condition } = props;
+  const { item } = styles
 
   return (
-    <View style={styles.item}>
+    <View style={item}>
       <Text>{dt_txt}</Text>
       <Text>{min}</Text>
       <Text>{max}</Text>
