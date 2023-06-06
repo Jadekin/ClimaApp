@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 const City = () => {
-  const { container, imageLayout, cityName, countryName, titles } = styles;
+  const { container, imageLayout, cityName, countryName, titles, sun } = styles;
 
   return (
     <SafeAreaView style={container}>
@@ -19,10 +19,11 @@ const City = () => {
         <Text style={[cityName, titles]}>Lima</Text>
         <Text style={[countryName, titles]}>Peru</Text>
         <View>
-          <Text style={titles}>Population</Text>
-          <Text style={titles}>
-            Sunrise time: {} | Sunset: {}
-          </Text>
+          <Text style={titles}>Population: 12MM</Text>
+        </View>
+        <View style={sun}>
+          <Text style={titles}>Sunrise time: 6am</Text>
+          <Text style={titles}>Sunset: 6pm</Text>
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
   titles: {
     justifyContent: 'center',
     alignSelf: 'center',
+    color: 'white',
   },
   cityName: {
     fontSize: 40,
@@ -47,6 +49,11 @@ const styles = StyleSheet.create({
   },
   countryName: {
     fontSize: 20,
+  },
+  sun: {
+    flexDirection: 'row',
+    gap: 40,
+    justifyContent: 'center',
   },
 });
 
