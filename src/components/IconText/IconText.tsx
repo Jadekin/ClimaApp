@@ -2,18 +2,17 @@ import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
 interface IconTextProps {
-  iconName: string;
+  icon: any;
   title: string;
 }
 
 const IconText = (props: IconTextProps) => {
   const { container, icon, title } = styles;
-
   return (
     <View style={container}>
       <Image
         style={icon}
-        source={require(`../../../assets/Icons/${props.iconName}.png`)}
+        source={icon}
       />
       <Text style={title}>{props.title}</Text>
     </View>
@@ -29,6 +28,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     tintColor: 'white',
+    backgroundColor: 'green',
   },
   title: {
     justifyContent: 'center',

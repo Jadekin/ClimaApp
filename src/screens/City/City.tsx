@@ -18,10 +18,12 @@ const City = () => {
     cityName,
     countryName,
     titles,
-    sunRiseSet,
-    icon,
-    population,
+    sunriseSunset,
   } = styles;
+
+  const sunrise = require('../../../assets/Icons/sunrise.png');
+  const sunset = require('../../../assets/Icons/sunset.png');
+  const group = require('../../../assets/Icons/group.png');
 
   return (
     <SafeAreaView style={container}>
@@ -32,16 +34,18 @@ const City = () => {
         <Text style={[countryName, titles]}>Peru</Text>
         <IconText
           title="12MM"
-          iconName="group"
+          icon={group}
         />
-        <IconText
-          title="6am"
-          iconName="sunrise"
-        />
-        <IconText
-          title="6pm"
-          iconName="sunset"
-        />
+        <View style={sunriseSunset}>
+          <IconText
+            title="6am"
+            icon={sunrise}
+          />
+          <IconText
+            title="6pm"
+            icon={sunset}
+          />
+        </View>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -67,18 +71,10 @@ const styles = StyleSheet.create({
   countryName: {
     fontSize: 20,
   },
-  population: {
+  sunriseSunset: {
     flexDirection: 'row',
+    gap: 30,
     justifyContent: 'center',
-  },
-  sunRiseSet: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  icon: {
-    width: 30,
-    height: 30,
-    tintColor: 'white',
   },
 });
 
