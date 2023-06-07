@@ -21,6 +21,7 @@ const City = () => {
     sunriseSunset,
   } = styles;
 
+  // Todo: Image
   const sunrise = require('../../../assets/Icons/sunrise.png');
   const sunset = require('../../../assets/Icons/sunset.png');
   const group = require('../../../assets/Icons/group.png');
