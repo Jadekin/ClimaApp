@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
-
+import RowText from '../../components/RowText/RowText';
 function CurrentWeather() {
   const [city, setCity] = useState('Lima');
   const [temperature, setTemperature] = useState(28);
@@ -12,10 +12,10 @@ function CurrentWeather() {
         <Text>Current weather in {city}</Text>
         <Text style={style.temp}>{temperature}</Text>
         <Text style={style.feelsTemp}>Feels like {feelsLikeTemperature}</Text>
-        <View style={style.lowTemperature}>
-          <Text>High: 28</Text>
-          <Text>Low: 10</Text>
-        </View>
+        <RowText
+          firstText="High: 30"
+          secondText="Low: 7"
+        />
       </View>
       <View style={style.body}>
         <Text style={style.description}>It's reaaaaaaaaally sunny</Text>
@@ -30,6 +30,7 @@ const style = StyleSheet.create({
     backgroundColor: 'pink',
     flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   wrapper: {
     flex: 1,
@@ -40,11 +41,6 @@ const style = StyleSheet.create({
   },
   feelsTemp: {
     fontSize: 20,
-  },
-  lowTemperature: {
-    flex: 2,
-    flexDirection: 'row',
-    gap: 10,
   },
   body: {
     backgroundColor: 'pink',
