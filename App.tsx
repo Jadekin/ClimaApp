@@ -1,14 +1,21 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import City from './src/screens/City/City';
+import { StyleSheet } from 'react-native';
 import CurrentWeather from './src/screens/CurrentWeather/CurrentWeather';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function App() {
+  const Stack = createNativeStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <CurrentWeather />
-      {/* <City /> */}
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="CurrentWeather"
+          component={CurrentWeather}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
