@@ -7,9 +7,9 @@ import {
   ImageBackground,
   StatusBar,
   View,
-  Image,
 } from 'react-native';
 import IconText from '../../components/IconText/IconText';
+import { sunrise, group, sunset } from '../../../assets/Icons';
 
 const City = () => {
   const {
@@ -20,11 +20,6 @@ const City = () => {
     titles,
     sunriseSunset,
   } = styles;
-
-  // Todo: Image
-  const sunrise = require('../../../assets/Icons/sunrise.png');
-  const sunset = require('../../../assets/Icons/sunset.png');
-  const group = require('../../../assets/Icons/group.png');
 
   return (
     <SafeAreaView style={container}>

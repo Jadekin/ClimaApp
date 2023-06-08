@@ -12,7 +12,7 @@ const IconText = (props: IconTextProps) => {
     <View style={container}>
       <Image
         style={icon}
-        source={icon}
+        source={props.icon}
       />
       <Text style={title}>{props.title}</Text>
     </View>
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     tintColor: 'white',
-    backgroundColor: 'green',
   },
   title: {
     justifyContent: 'center',
