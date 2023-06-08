@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
 import RowText from '../../components/RowText/RowText';
+import { WeatherType } from '../../Utilities/WeatherType';
+
 function CurrentWeather() {
   const [city, setCity] = useState('Lima');
   const [temperature, setTemperature] = useState(28);
@@ -18,7 +20,7 @@ function CurrentWeather() {
         />
       </View>
       <View style={style.body}>
-        <Text style={style.description}>It's reaaaaaaaaally sunny</Text>
+        <Text style={style.description}>{WeatherType['Clouds'].message}</Text>
         <Text style={style.message}>Let's go to the beack!</Text>
       </View>
     </SafeAreaView>
