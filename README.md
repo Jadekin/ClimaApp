@@ -19,3 +19,6 @@ Currently doing: Navigation.
 
 <a href="https://www.flaticon.com/free-icons/sunset" title="sunset icons">Sunset and sunrise icons created by Mehwish - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/population" title="population icons">Population icons created by alfanz - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/upcoming" title="upcoming icons">Upcoming icons created by Ifanicon - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/urban" title="urban icons">Urban icons created by Eucalyp - Flaticon</a>
