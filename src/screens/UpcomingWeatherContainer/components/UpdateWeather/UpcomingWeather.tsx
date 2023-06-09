@@ -9,8 +9,8 @@ import {
   View,
 } from 'react-native';
 
-import WeatherListItem from '../../components/WeatherListItem/WeatherListItem';
-
+import WeatherListItem from '../../../../components/WeatherListItem/WeatherListItem';
+import { cloudBackground } from '../../../../../assets/Backgrounds';
 function UpcomingWeather() {
   const data = [
     {
@@ -157,7 +157,7 @@ function UpcomingWeather() {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
-        source={require('../../../assets/cloudbackground.jpg')}
+        source={cloudBackground}
         style={styles.image}>
         <Text>Upcoming weather</Text>
         <FlatList

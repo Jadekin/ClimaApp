@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import IconText from '../../components/IconText/IconText';
 import { sunrise, group, sunset } from '../../../assets/Icons';
-
+import { cloudBackground } from '../../../assets/Backgrounds';
 const City = () => {
   const {
     container,
@@ -24,7 +24,7 @@ const City = () => {
   return (
     <SafeAreaView style={container}>
       <ImageBackground
-        source={require('../../../assets/cloudbackground.jpg')}
+        source={cloudBackground}
         style={imageLayout}>
         <Text style={[cityName, titles]}>Lima</Text>
         <Text style={[countryName, titles]}>Peru</Text>
