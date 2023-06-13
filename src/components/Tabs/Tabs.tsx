@@ -2,7 +2,6 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Image } from 'react-native';
 import City from '../../screens/City/City';
-import UpcomingWeather from '../../screens/UpcomingWeatherContainer/components/UpdateWeather/UpcomingWeather';
 import CurrentWeather from '../../screens/CurrentWeather/CurrentWeather';
 import { city, weather, upcomingWeather } from '../../../assets/Icons';
 import UpcomingWeatherContainer from '../../screens/UpcomingWeatherContainer/UpcomingWeatherContainer';
