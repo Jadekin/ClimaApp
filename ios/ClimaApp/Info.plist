@@ -51,5 +51,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location is required to show the weather in your city.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location is required to show the weather in your city.</string>
 </dict>
 </plist>

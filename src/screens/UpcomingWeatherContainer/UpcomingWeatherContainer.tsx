@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { ActivityIndicator, View, StyleSheet } from 'react-native';
 import UpcomingWeather from './components/UpdateWeather/UpcomingWeather';
-import geolocation from '@react-native-community/geolocation';
+import Geolocation from '@react-native-community/geolocation';
 
 const UpcomingWeatherContainer = () => {
   const [loading, setLoading] = useState(true);
+
+  Geolocation.getCurrentPosition((info) => console.log(info));
+
   if (loading) {
     return (
       <View style={styles.container}>
