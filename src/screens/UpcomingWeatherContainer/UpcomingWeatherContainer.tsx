@@ -3,6 +3,7 @@ import { ActivityIndicator, View, StyleSheet } from 'react-native';
 import UpcomingWeather from './components/UpdateWeather/UpcomingWeather';
 import Geolocation from '@react-native-community/geolocation';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
+import LoadingMessage from '../../components/LoadingMessage/LoadingMessage';
 
 const UpcomingWeatherContainer = () => {
   const [loading, setLoading] = useState(false);
@@ -10,15 +11,8 @@ const UpcomingWeatherContainer = () => {
   const [error, setError] = useState(true);
 
   useEffect(() => {});
-  if (loading) {
-    return (
-      <View style={styles.container}>
-        <ActivityIndicator
-          size={'large'}
-          color={'tomato'}
-        />
-      </View>
-    );
+  if (true) {
+    return <LoadingMessage />;
   }
 
   if (error) {

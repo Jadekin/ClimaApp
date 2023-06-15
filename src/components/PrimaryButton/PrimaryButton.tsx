@@ -3,7 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  Button,
   Pressable,
   ActivityIndicator,
 } from 'react-native';
@@ -39,6 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'tomato',
     padding: 10,
     borderRadius: 5,
+    elevation: 8,
   },
   text: {
     color: 'white',
