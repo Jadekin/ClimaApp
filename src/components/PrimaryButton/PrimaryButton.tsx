@@ -16,7 +16,7 @@ interface CustomButtonProps {
 }
 
 const CustomButton = (props: CustomButtonProps) => {
-  const content = true ? (
+  const content = props.loading ? (
     <ActivityIndicator
       size="small"
       color="white"
@@ -25,11 +25,13 @@ const CustomButton = (props: CustomButtonProps) => {
     <Pressable
       onPress={props.onPress}
       disabled={props.disabled}>
-      <Text>{props.title}</Text>
+      <Text style={styles.text}>{props.title}</Text>
     </Pressable>
   );
 
-  return <View style={styles.container}>{content}</View>;
+  const style = props.disabled ? styles.disabled : styles.container;
+
+  return <View style={style}>{content}</View>;
 };
 
 const styles = StyleSheet.create({
@@ -37,7 +39,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'tomato',
     padding: 10,
     borderRadius: 5,
+  },
+  text: {
     color: 'white',
+  },
+  disabled: {
+    backgroundColor: 'gray',
+    padding: 10,
+    borderRadius: 5,
   },
 });
 
