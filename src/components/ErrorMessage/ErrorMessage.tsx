@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
+import CustomButton from '../CustomButton/CustomButton';
 
 interface ErrorMessageProps {
   message: string;
@@ -10,7 +11,7 @@ const ErrorMessage = (props: ErrorMessageProps) => {
   return (
     <View style={styles.container}>
       <Text>{props.message}</Text>
-      <Button
+      <CustomButton
         title="Retry"
         onPress={props.onRetry}
       />
