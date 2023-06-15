@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ActivityIndicator, View, StyleSheet } from 'react-native';
 import UpcomingWeather from './components/UpdateWeather/UpcomingWeather';
 import Geolocation from '@react-native-community/geolocation';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
 const UpcomingWeatherContainer = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [location] = useState(null);
+  const [error, setError] = useState(true);
 
-  Geolocation.getCurrentPosition((info) => console.log(info));
-
+  useEffect(() => {});
   if (loading) {
     return (
       <View style={styles.container}>
@@ -18,6 +20,20 @@ const UpcomingWeatherContainer = () => {
       </View>
     );
   }
+
+  if (error) {
+    return (
+      <ErrorMessage
+        message="Something went wrong"
+        onRetry={here}
+      />
+    );
+  }
+
+  function here() {
+    console.log('here');
+  }
+
   return <UpcomingWeather />;
   // load API
   // show error

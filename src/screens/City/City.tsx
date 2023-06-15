@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   SafeAreaView,
@@ -9,8 +9,9 @@ import {
   View,
 } from 'react-native';
 import IconText from '../../components/IconText/IconText';
-import { sunrise, group, sunset } from '../../../assets/Icons';
 import { cloudBackground } from '../../../assets/Backgrounds';
+import { group, sunset } from '../../../assets/Icons';
+
 const City = () => {
   const {
     container,
@@ -21,6 +22,14 @@ const City = () => {
     sunriseSunset,
   } = styles;
 
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    const sunrise = require('../../../assets/Icons/sunrise.png');
+    setImage(sunrise);
+    // check assing to one of ou instance variables.
+  });
+
   return (
     <SafeAreaView style={container}>
       <ImageBackground
@@ -28,14 +37,14 @@ const City = () => {
         style={imageLayout}>
         <Text style={[cityName, titles]}>Lima</Text>
         <Text style={[countryName, titles]}>Peru</Text>
-        <IconText
+        {/* <IconText
           title="12MM"
           icon={group}
-        />
+        /> */}
         <View style={sunriseSunset}>
           <IconText
             title="6am"
-            icon={sunrise}
+            icon={image}
           />
           <IconText
             title="6pm"

@@ -5,4 +5,4 @@ const weather = require('./cloudy.png');
 const city = require('./cityscape.png');
 const upcomingWeather = require('./next-week.png');
 
-export { sunrise, sunset, group, weather, city, upcomingWeather };
+export { sunset, group, weather, city, upcomingWeather };
