@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import CustomButton from '../CustomButton/CustomButton';
+import CustomButton from '../PrimaryButton/PrimaryButton';
 
 interface ErrorMessageProps {
   message: string;
-  onRetry: () => void;
+    onRetry: () => void;
+    disabled?: boolean;
+    loading?: boolean;
 }
 
 const ErrorMessage = (props: ErrorMessageProps) => {
